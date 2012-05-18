@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore TextMate project files
+*.tmproj
+
+# Ignore IDEA project files
+.idea/

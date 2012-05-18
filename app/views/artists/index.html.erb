@@ -1,0 +1,25 @@
+<h2>Artists</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bio</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @artists.each do |artist| %>
+    <tr>
+      <td><%= artist.name %></td>
+      <td><%= artist.bio %></td>
+      <td><%= artist.start_date %></td>
+      <td><%= artist.end_date %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br/>
