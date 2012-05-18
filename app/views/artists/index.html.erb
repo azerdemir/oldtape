@@ -1,6 +1,6 @@
 <h2>Artists</h2>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,7 +18,7 @@
       <td><%= artist.bio %></td>
       <td><%= artist.start_date %></td>
       <td><%= artist.end_date %></td>
-      <td><%= link_to 'Display', artist %></td>
+      <td><%= link_to 'Display', artist, :class => 'btn btn-mini' %></td>
     </tr>
   <% end %>
   </tbody>
