@@ -1,4 +1,6 @@
 Oldtape::Application.routes.draw do
   # Default route
-  root :to => 'artist#index'
+  root :to => 'artists#index'
+
+  resources :artists
 end
