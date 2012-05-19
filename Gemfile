@@ -26,6 +26,8 @@ gem 'therubyracer', :platform => :ruby
 gem 'less-rails'
 gem 'less-rails-bootstrap'
 
+gem 'devise'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
