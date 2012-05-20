@@ -32,7 +32,7 @@
         <td><%= album.name %></td>
         <td><%= album.info %></td>
         <td><%= album.release_date %></td>
-        <td><%= link_to 'Display', [album.artist, album], :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Display', album, :class => 'btn btn-mini' %></td>
       </tr>
   <% end %>
   </tbody>

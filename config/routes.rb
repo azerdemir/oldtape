@@ -6,9 +6,7 @@ Oldtape::Application.routes.draw do
   root :to => 'artists#index'
 
   # Resourceful Routes
-  resources :artists do
-	  resources :albums
-  end
+  resources :artists, :albums
 
 	# We can define additional routes except nested resources above like this.
 	#resources :albums
