@@ -14,4 +14,28 @@
   <%= @artist.end_date %>
 </p>
 
+<h4>Albums</h4>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Info</th>
+    <th>Release Date</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @artist.albums.each do |album| %>
+      <tr>
+        <td><%= album.name %></td>
+        <td><%= album.info %></td>
+        <td><%= album.release_date %></td>
+        <td><%= link_to 'Display', [album.artist, album], :class => 'btn btn-mini' %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <br/>
