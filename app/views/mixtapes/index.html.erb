@@ -1,0 +1,25 @@
+<h2>Mixtapes</h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @mixtapes.each do |mixtape| %>
+      <tr>
+        <td><%= mixtape.name %></td>
+        <td><%= mixtape.description %></td>
+        <td><%= link_to 'Display', mixtape, :class => 'btn btn-mini' %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>Fix this view to display user's own mixtapes.</p>
+
+<br/>
