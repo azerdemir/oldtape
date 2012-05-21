@@ -11,5 +11,9 @@ class BuildMixtapeController < ApplicationController
   end
 
   def destroy
+    @mixtape_song = MixtapeSong.find(params[:id])
+    @mixtape_song.destroy
+    flash[:notice] = "Song removed."
+    redirect_to mixtapes_path
   end
 end

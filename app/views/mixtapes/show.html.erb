@@ -1,4 +1,28 @@
 <h2><%= @mixtape.name %></h2>
 <p><%= @mixtape.description %></p>
 
-<p>Here, mixtape songs will be displayed.</p>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Artist</th>
+    <th>Album</th>
+    <th>Song</th>
+    <th>Duration</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @mixtape.mixtape_songs.each do |ms| %>
+      <tr>
+        <td><%= ms.song.album.artist.name %></td>
+        <td><%= ms.song.album.name %></td>
+        <td><%= ms.song.name %></td>
+        <td><%= ms.song.duration %></td>
+        <td><%= link_to 'Remove', build_mixtape_path(ms), confirm: 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger' %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br/>
