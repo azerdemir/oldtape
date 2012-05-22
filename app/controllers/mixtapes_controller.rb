@@ -6,6 +6,7 @@ class MixtapesController < ApplicationController
   end
 
   def show
+    @songs = Song.search(params[:search])
   end
 
   def create

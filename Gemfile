@@ -42,3 +42,6 @@ gem 'devise'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'quiet_assets', group: :development
+gem 'thin', group: :development
