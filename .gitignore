@@ -19,3 +19,6 @@
 
 # Ignore IDEA project files
 .idea/
+
+# env file
+.env
