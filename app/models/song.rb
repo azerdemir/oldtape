@@ -6,11 +6,15 @@ class Song < ActiveRecord::Base
   has_many :mixtape_songs
   has_many :mixtapes, :through => :mixtape_songs
 
-  def self.search(search)
-    if search.blank?
-      nil
-    else
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    end
-  end
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
+  # old basic seach method
+  #def self.search(search)
+  #  if search.blank?
+  #    nil
+  #  else
+  #    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  #  end
+  #end
 end
