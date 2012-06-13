@@ -1,38 +1,31 @@
-<h2><%= @artist.name %></h2>
+<div class="page-header">
+  <h1>
+    <%= @artist.name %>
+    <small>[<%= @artist.start_date %> - <%= @artist.end_date.blank? ? 'present' : @artist.end_date %>]</small>
+  </h1>
+</div>
 
-<p>
+<p class="lead">
   <%= @artist.bio %>
 </p>
 
-<p>
-  <strong>Start Date:</strong>
-  <%= @artist.start_date %>
-</p>
-
-<p>
-  <strong>End Date:</strong>
-  <%= @artist.end_date %>
-</p>
-
-<h4>Albums</h4>
+<h6>Albums</h6>
 
 <table class="table table-striped">
   <thead>
   <tr>
     <th>Name</th>
     <th>Info</th>
-    <th>Release Date</th>
-    <th></th>
+    <th>Release</th>
   </tr>
   </thead>
 
   <tbody>
   <% @artist.albums.each do |album| %>
       <tr>
-        <td><%= album.name %></td>
-        <td><%= album.info %></td>
+        <td style="width:200px;"><%= link_to album.name, album %></td>
+        <td><%= album.info.length > 100 ? "#{album.info[0,100]}..." : album.info %></td>
         <td><%= album.release_date %></td>
-        <td><%= link_to 'Display', album, :class => 'btn btn-mini' %></td>
       </tr>
   <% end %>
   </tbody>
@@ -40,4 +33,4 @@
 
 <br/>
 
-<%= link_to 'New album', new_album_path(:artist_id => @artist.id) %>
+<%= link_to 'New Album', new_album_path(:artist_id => @artist.id), :class => 'btn btn-primary' %>

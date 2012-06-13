@@ -1,12 +1,12 @@
-<h2>Artists</h2>
+<div class="page-header">
+  <h1>Artists</h1>
+</div>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
       <th>Bio</th>
-      <th>Start</th>
-      <th>End</th>
       <th></th>
     </tr>
   </thead>
@@ -14,11 +14,9 @@
   <tbody>
   <% @artists.each do |artist| %>
     <tr>
-      <td><%= artist.name %></td>
-      <td><%= artist.bio %></td>
-      <td><%= artist.start_date %></td>
-      <td><%= artist.end_date %></td>
-      <td><%= link_to 'Display', artist, :class => 'btn btn-mini' %></td>
+      <td style="width: 150px;"><%= link_to artist.name, artist %></td>
+      <td><%= artist.bio.length > 125 ? "#{artist.bio[0,125]}..." : artist.bio %></td>
+      <td style="width: 100px;"><%= artist.start_date %> - <%= artist.end_date.blank? ? 'present' : artist.end_date %></td>
     </tr>
   <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br/>
 
-<%= link_to 'New artist', new_artist_path %>
+<%= link_to 'New Artist', new_artist_path, :class => 'btn btn-primary' %>

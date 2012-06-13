@@ -1,15 +1,15 @@
-<h2><%= @album.name %></h2>
+<div class="page-header">
+  <h1>
+    <%= @album.name %>
+    <small>[<%= @album.release_date %>]</small>
+  </h1>
+</div>
 
-<p>
+<p class="lead">
   <%= @album.info %>
 </p>
 
-<p>
-  <strong>Release Date:</strong>
-  <%= @album.release_date %>
-</p>
-
-<h4>Albums</h4>
+<h6>Songs</h6>
 
 <table class="table table-striped">
   <thead>
@@ -35,4 +35,4 @@
 
 <br/>
 
-<%= link_to 'New song', new_song_path(:album_id => @album.id) %>
+<%= link_to 'New Song', new_song_path(:album_id => @album.id), :class => 'btn btn-primary' %>

@@ -21,7 +21,23 @@
         <ul class="nav">
           <li><%= link_to "Create One!", artists_path %></li>
           <li><%= link_to "Artists", artists_path %></li>
-          <li><%= link_to "Your Profile" %></li>
+          <li class="divider-vertical"></li>
+          
+        </ul>
+        <ul class="nav pull-right">
+        <% if user_signed_in? %>
+          <li class="dropdown" id="umenu">
+            <%= link_to current_user.email, "#", :class => "dropdown-toggle", "data-toggle" => "dropdown", :href => "#umenu" %>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        <% end %>
         </ul>
       </div>
     </div>
@@ -29,25 +45,15 @@
 </div>
 
 <div class="container">
-  <div id="user_nav" class="row">
-    <div class="span12">
-    <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. Not you?
-        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or
-        <%= link_to "Sign in", new_user_session_path %>
-    <% end %>
-    </div>
-  </div>
-
   <div class="row">
     <div class="span9">
       <%= render :partial => 'shared/flashes' %>
       <%= yield %>
     </div>
     <div class="span3">
-      <h2>What is Oldtape?</h2>
+      <div class="page-header">
+        <h1><small>What is Oldtape?</small></h1>
+      </div>
       Oldtape is a easy mixtape creation tool with search capabilites for songs.
     </div>
   </div>
