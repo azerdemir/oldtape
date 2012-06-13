@@ -9,9 +9,7 @@ Oldtape::Application.routes.draw do
   root :to => 'artists#index'
 
   # Resourceful Routes
-  resources :artists, :mixtapes, :build_mixtape
-  resources :albums, :only => [:index, :show]
-	resources :songs,  :only => [:index, :show]
+  resources :artists, :albums, :songs, :mixtapes, :build_mixtape
 
 	# Nested Resourceful Routes
 	# resources :artists do

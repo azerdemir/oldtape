@@ -1,5 +1,10 @@
-class Artist < ActiveRecord::Base
-  attr_accessible :bio, :end_date, :name, :start_date
+class Artist
+  include Mongoid::Document
 
-  has_many :albums, :dependent => :destroy
+  field :name, type: String
+  field :bio, type: String
+  field :start_date, type: Integer
+  field :end_date, type: Integer
+
+  has_many :albums
 end

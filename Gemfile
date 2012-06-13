@@ -49,3 +49,7 @@ gem 'thin'
 
 # To use elasticsearch
 gem 'tire'
+
+# To use mongodb
+gem "mongoid", "~> 3.0.0.rc"
+gem "bson_ext", "~> 1.6.4"
